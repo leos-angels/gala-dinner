@@ -25,9 +25,9 @@
                     brand: {
                         purple: 'rgb(50, 26, 85)',       /* Exact Brand RGB (50, 26, 85) */
                         darkPurple: 'rgb(30, 14, 52)',   /* Dark Contrast Accent */
-                        gold: '#D4AF37',                /* Ticket Gold */
-                        goldLight: '#F3E5AB',
-                        goldHover: '#B59226',
+                        gold: '#D4AF37',                /* Primary gold */
+                        goldLight: '#D4AF37',
+                        goldHover: '#D4AF37',
                         charcoal: '#0F0D13'
                     }
                 },
@@ -42,7 +42,8 @@
 
 <style>
     .gold-gradient-text {
-        background: linear-gradient(135deg, #FFF0B3 0%, #D4AF37 50%, #AA820A 100%);
+        background: linear-gradient(135deg, #D4AF37 0%, #D4AF37 48%, #D4AF37 100%);
+        background-clip: text;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
     }
@@ -111,6 +112,174 @@
         padding: 1.5rem;
         text-align: center;
     }
+
+    @media (max-width: 1023px) {
+        body {
+            overflow-x: hidden;
+        }
+
+        .text-xs {
+            font-size: 0.875rem !important;
+        }
+
+        .text-sm,
+        .text-md {
+            font-size: 1rem !important;
+            line-height: 1.65;
+        }
+
+        .mobile-readable {
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .mobile-card {
+            padding: 2rem;
+        }
+
+        section .text-sm {
+            font-size: 0.95rem;
+            line-height: 1.65;
+        }
+
+        #sponsorship .p-10 {
+            padding: 2rem;
+        }
+
+        #sponsorship .p-6 {
+            padding: 1.25rem;
+        }
+    }
+
+    @media (max-width: 767px) {
+        body {
+            font-size: 18px;
+        }
+
+        .text-xs {
+            font-size: 1rem !important;
+        }
+
+        .text-sm,
+        .text-md {
+            font-size: 1.1rem !important;
+            line-height: 1.75;
+        }
+
+        section p,
+        section li {
+            font-size: 1.1rem !important;
+            line-height: 1.75;
+        }
+
+        section span {
+            font-size: 1rem !important;
+        }
+
+        section h3 {
+            font-size: 1.5rem;
+            line-height: 1.25;
+        }
+
+        section h4 {
+            font-size: 1.25rem;
+        }
+
+        footer p,
+        footer a {
+            font-size: 1rem !important;
+            line-height: 1.6;
+        }
+
+        footer h4 {
+            font-size: 1.25rem;
+        }
+
+        .mobile-readable {
+            font-size: 1.05rem;
+            line-height: 1.75;
+        }
+
+        .mobile-card {
+            padding: 1.5rem;
+        }
+
+        section .text-sm {
+            font-size: 1rem;
+        }
+
+        #sponsorship .p-10 {
+            padding: 1.5rem;
+        }
+
+        #sponsorship .p-6 {
+            padding: 1.125rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.75rem, 13vw, 4.5rem);
+            line-height: 0.98;
+            letter-spacing: 0.08em;
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            line-height: 1.6;
+            letter-spacing: 0.12em;
+        }
+
+        .mobile-menu-link {
+            font-size: 1.05rem;
+            padding-block: 0.65rem;
+        }
+
+        #mobile-menu {
+            color: rgb(50, 26, 85);
+            background: linear-gradient(135deg, #fcf7ec 0%, #f3ede3 100%);
+            border-bottom-color: #D4AF37;
+        }
+
+        #mobile-menu a {
+            color: rgb(50, 26, 85) !important;
+        }
+
+        #mobile-menu a:hover {
+            color: #D4AF37 !important;
+        }
+
+        section h1 {
+            font-size: calc(2.75rem + 15px) !important;
+        }
+
+        section h2 {
+            font-size: calc(2.25rem + 15px) !important;
+        }
+
+        section h3 {
+            font-size: calc(1.5rem + 15px) !important;
+        }
+
+        section h4 {
+            font-size: calc(1.25rem + 15px) !important;
+        }
+
+        section p,
+        section li,
+        section span,
+        section label,
+        section a,
+        section button,
+        footer p,
+        footer a,
+        footer span {
+            font-size: calc(1rem + 15px) !important;
+        }
+
+        #mobile-menu a,
+        #mobile-menu button {
+            font-size: calc(1rem + 15px) !important;
+        }
+    }
 </style>
 <!-- NAVIGATION HEADER -->
 <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-brand-gold/20 shadow-2xl bg-gradient-to-r from-[#fcf7ec] via-[#f3ede3] to-[#f7f2e7] text-brand-purple" id="main-header">
@@ -162,9 +331,9 @@
 <main class="pt-24">
 
     <!-- HERO SECTION WITH TICKET ARTWORK STYLING -->
-    <section class="relative min-h-[92vh] flex items-center justify-center overflow-hidden py-20">
+    <section class="hero-section relative min-h-[92vh] flex items-center justify-center overflow-hidden py-20">
         <div class="absolute inset-0 z-0">
-            <img src="https://res.cloudinary.com/deyxnsu01/image/upload/v1785763769/NicePng_sports-png_358248_pqse5l.png" alt="Gala Grand Ballroom" class="w-full h-full object-cover object-center filter brightness-40">
+            <img src="https://res.cloudinary.com/deyxnsu01/image/upload/Virtual_horse_racing_o9fxpr.png" alt="Gala Grand Ballroom" class="w-full h-full object-cover object-center scale-125 sm:scale-115 lg:scale-125 filter brightness-40">
             <div class="absolute inset-0 bg-gradient-to-t from-brand-charcoal via-brand-purple/80 to-transparent"></div>
         </div>
 
@@ -174,14 +343,14 @@
                 Leo's Angels Presents
             </span>
             
-            <h1 class="font-serif text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-widest text-white mb-2 uppercase">
+            <h1 class="hero-title font-serif text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-widest text-white mb-2 uppercase">
                 FUNDRAISING
             </h1>
-            <h1 class="font-serif text-4xl sm:text-8xl lg:text-9xl font-extrabold tracking-widest gold-gradient-text mb-6 uppercase">
+            <h1 class="hero-title font-serif text-4xl sm:text-8xl lg:text-9xl font-extrabold tracking-widest gold-gradient-text mb-6 uppercase">
                BLACK TIE GALA
             </h1>
 
-            <p class="text-sm sm:text-base font-serif uppercase tracking-[0.25em] text-white mb-8">
+            <p class="hero-subtitle font-serif uppercase tracking-[0.25em] text-white mb-8">
                 In Support of Epilepsy Awareness & In Memory of Leo O'Brien
             </p>
 
@@ -579,23 +748,23 @@ Complete the form to tell us about your donation, and our team will be in touch 
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 mb-12">
-                <div class="rounded-[2rem] border border-amber-400/40 bg-gradient-to-br from-amber-950/80 via-amber-400/20 to-amber-900/70 p-10 shadow-[0_25px_80px_rgba(0,0,0,0.30)]">
+                <div class="rounded-[2rem] border border-brand-gold/40 bg-gradient-to-br from-[#241b0b]/80 via-brand-gold/20 to-[#3a2b0b]/70 p-10 shadow-[0_25px_80px_rgba(0,0,0,0.30)]">
                     <div class="mb-6">
-                        <span class="text-amber-200 uppercase tracking-widest text-xs font-semibold">Gold Sponsor</span>
+                        <span class="text-brand-goldLight uppercase tracking-widest text-xs font-semibold">Gold Sponsor</span>
                         <h3 class="font-serif text-4xl font-bold text-white mt-6">£3,000</h3>
                         <p class="text-gray-300 text-base leading-relaxed mt-4">A high-visibility sponsor tier designed for organisations seeking premium hospitality and strong event recognition.</p>
                     </div>
                     <div class="grid gap-4 sm:grid-cols-2">
-                        <div class="rounded-3xl bg-[#1d1728]/90 border border-amber-400/20 p-6">
-                            <p class="text-amber-200 uppercase tracking-[0.22em] text-xs font-semibold mb-4">benefits</p>
+                        <div class="rounded-3xl bg-[#1d1728]/90 border border-brand-gold/20 p-6">
+                            <p class="text-brand-goldLight uppercase tracking-[0.22em] text-xs font-semibold mb-4">benefits</p>
                             <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
                                 <li>Reserved table for ten</li>
                                 <li>Half-page programme advertisement</li>
                                 <li>Logo on event signage</li>
                             </ul>
                         </div>
-                        <div class="rounded-3xl bg-[#1d1728]/90 border border-amber-400/20 p-6">
-                            <p class="text-amber-200 uppercase tracking-[0.22em] text-xs font-semibold mb-4">Visibility</p>
+                        <div class="rounded-3xl bg-[#1d1728]/90 border border-brand-gold/20 p-6">
+                            <p class="text-brand-goldLight uppercase tracking-[0.22em] text-xs font-semibold mb-4">Visibility</p>
                             <ul class="space-y-3 text-sm text-gray-300 leading-relaxed">
                                 <li>Website recognition</li>
                                 <li>Social media acknowledgement</li>
@@ -860,8 +1029,8 @@ Complete the form to tell us about your donation, and our team will be in touch 
         </div>
     </section>
 
-    <!-- SECTION 15: EVENT DETAILS -->
-    <section class="py-20 bg-brand-darkPurple border-t border-brand-gold/10">
+    <!-- SECTION 15: EVENT DETAILS / FAQs -->
+    <section id="faqs" class="py-20 bg-brand-darkPurple border-t border-brand-gold/10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-brand-gold font-semibold uppercase tracking-widest text-sm">Practical Information</span>
@@ -939,10 +1108,10 @@ Complete the form to tell us about your donation, and our team will be in touch 
         link.addEventListener('click', () => mobileMenu.classList.add('hidden'));
     });
 
-    // Keep the header white while scrolling
+    // Keep the themed header gradient while scrolling
     window.addEventListener('scroll', () => {
         if (window.scrollY > 10) {
-            mainHeader.classList.add('bg-white', 'shadow-lg');
+            mainHeader.classList.add('shadow-lg');
         } else {
             mainHeader.classList.remove('shadow-lg');
         }
