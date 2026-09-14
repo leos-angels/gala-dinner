@@ -133,6 +133,56 @@
         margin: 0 0 1.5rem;
     }
 
+    .headline-sponsor {
+        padding: 0 0 2.5rem;
+        margin-bottom: 3rem;
+        border-bottom: 1px solid rgba(212, 175, 55, 0.16);
+        text-align: center;
+    }
+
+    .headline-sponsor__eyebrow {
+        margin: 0 0 0.9rem;
+        color: #D4AF37;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+    }
+
+    .headline-sponsor__logo-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: min(100%, 24rem);
+        aspect-ratio: 1 / 1;
+        height: auto;
+        margin: 0 auto 1.25rem;
+        padding: 3rem;
+        border-radius: 1.25rem;
+        background: rgba(255, 255, 255, 0.96);
+        border: 1px solid rgba(15, 13, 19, 0.08);
+        overflow: hidden;
+    }
+
+    .headline-sponsor__logo {
+        width: 72%;
+        height: 72%;
+        max-width: 72%;
+        max-height: 72%;
+        object-fit: contain;
+        display: block;
+        transform-origin: center;
+    }
+
+    .headline-sponsor__name {
+        margin: 0;
+        color: #f5f1e8;
+        font-family: 'Cinzel', Georgia, serif;
+        font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+        font-weight: 600;
+        letter-spacing: 0.04em;
+    }
+
     .sponsor-grid {
         display: grid;
         grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -144,27 +194,15 @@
             grid-template-columns: repeat(5, minmax(0, 1fr));
         }
 
-        .sponsor-grid--all.sponsor-grid--remainder-1 > .sponsor-card:last-child {
-            grid-column: 3;
-        }
-
-        .sponsor-grid--all.sponsor-grid--remainder-2 > .sponsor-card:nth-last-child(2) {
+        .sponsor-grid--all > .sponsor-card:nth-last-child(3) {
             grid-column: 2;
         }
 
-        .sponsor-grid--all.sponsor-grid--remainder-2 > .sponsor-card:last-child {
+        .sponsor-grid--all > .sponsor-card:nth-last-child(2) {
             grid-column: 3;
         }
 
-        .sponsor-grid--all.sponsor-grid--remainder-3 > .sponsor-card:nth-last-child(3) {
-            grid-column: 2;
-        }
-
-        .sponsor-grid--all.sponsor-grid--remainder-3 > .sponsor-card:nth-last-child(2) {
-            grid-column: 3;
-        }
-
-        .sponsor-grid--all.sponsor-grid--remainder-3 > .sponsor-card:last-child {
+        .sponsor-grid--all > .sponsor-card:last-child {
             grid-column: 4;
         }
     }
@@ -1366,19 +1404,11 @@ Complete the form to tell us about your donation, and our team will be in touch 
         { name: 'Global InvestHer', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238744/GIH_Logo__colour_Transparent_kgl0tg.png', logoPending: false },
         { name: 'Kella', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238744/KELLA_logo_ego5qp.jpg', logoPending: false },
         { name: 'Mamaya Health', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238743/Mamaya_Health_logo_vejcex.png', logoPending: false },
-        { name: 'The Parkgate Hotel', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Parkgate-Hotel-Logo_1_ywkdjh.png', logoPending: false },
+        { name: 'The Parkgate Hotel', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238743/Parkgate-Hotel-Logo_gbs6it.png', logoPending: false },
         { name: 'Meldrum House', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238742/Meldrum-House-Logo_ew8opj.webp', logoPending: false },
         { name: 'Sarcol', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238744/SARCOL_Logo_ucf7st.png', logoPending: false },
         { name: 'Hand Picked Hotels', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787567723/Untitled-design-10_y0mrsy.png', logoPending: true },
-        { name: 'CEB Styling', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238744/CEB_Styling_Logo_Transparent_fzdn9o.png', logoPending: false },
-        { name: 'Two Chicks', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026749/Two_Chicks_logo_urw2fa.webp', logoPending: false },
-        { name: 'Rutland Hall', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Rutland_Hall_logo_otcbbh.jpg', logoPending: false },
-        { name: 'Foxhills', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/foxhills_logo_nyqvdo.png', logoPending: false },
-        { name: 'Homewood', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Homewood_Bath_logo_lzxdrq.webp', logoPending: false },
-        { name: 'Elite Hotels', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Elite_Hotels_logo_yjo3jm.png', logoPending: false },
-        { name: 'Cashel Palace', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/cashel-palace-logo_mdoaoi.png', logoPending: false },
-        { name: 'Gilpin Hotel', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Gilpin_hotel_logo_cjsbbd.png', logoPending: false },
-        { name: 'Petanque NXT', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Petanque_NXT_v5nky2.jpg', logoPending: false }
+        { name: 'CEB Styling', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238744/CEB_Styling_Logo_Transparent_fzdn9o.png', logoPending: false }
     ];
 
     function createSponsorCard(sponsor) {
@@ -1413,6 +1443,16 @@ Complete the form to tell us about your donation, and our team will be in touch 
 
         container.innerHTML = '';
 
+        const headlineSponsor = document.createElement('div');
+        headlineSponsor.className = 'headline-sponsor';
+        headlineSponsor.innerHTML = `
+            <div class="headline-sponsor__logo-wrap">
+                <img src="https://res.cloudinary.com/deyxnsu01/image/upload/v1789378787/greenlogo_secondary_mgcoh2.png" alt="MKF Capital logo" class="headline-sponsor__logo">
+            </div>
+            <p class="headline-sponsor__name">Headline Sponsor</p>
+        `;
+        container.appendChild(headlineSponsor);
+
         const groups = sponsorCategories
             .map(category => ({
                 category,
@@ -1440,8 +1480,7 @@ Complete the form to tell us about your donation, and our team will be in touch 
 
         if (unassigned.length) {
             const grid = document.createElement('div');
-            const remainder = unassigned.length % 5;
-            grid.className = 'sponsor-grid sponsor-grid--all sponsor-grid--remainder-' + remainder;
+            grid.className = 'sponsor-grid sponsor-grid--all';
             unassigned.forEach(sponsor => grid.appendChild(createSponsorCard(sponsor)));
             container.appendChild(grid);
         }
