@@ -140,6 +140,17 @@
         text-align: center;
     }
 
+    .headline-sponsor__items {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        align-items: start;
+    }
+
+    .headline-sponsor__item {
+        min-width: 0;
+    }
+
     .headline-sponsor__eyebrow {
         margin: 0 0 0.9rem;
         color: #D4AF37;
@@ -177,6 +188,15 @@
         font-size: clamp(1.25rem, 2.5vw, 1.75rem);
         font-weight: 600;
         letter-spacing: 0.04em;
+    }
+
+    .headline-sponsor__category {
+        margin: 0.55rem 0 0;
+        color: #D4AF37;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
     }
 
     .sponsor-grid {
@@ -346,6 +366,11 @@
         .headline-sponsor__logo-wrap {
             height: 9rem;
             padding: 1rem;
+        }
+
+        .headline-sponsor__items {
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
         }
     }
 
@@ -1427,7 +1452,7 @@ Complete the form to tell us about your donation, and our team will be in touch 
         { name: 'Sarcol', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238744/SARCOL_Logo_ucf7st.png', logoPending: false },
         { name: 'Hand Picked Hotels', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787567723/Untitled-design-10_y0mrsy.png', logoPending: true },
         { name: 'CEB Styling', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1787238744/CEB_Styling_Logo_Transparent_fzdn9o.png', logoPending: false },
-        { name: 'Two Chicks', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026749/Two_Chicks_logo_urw2fa.webp', logoPending: false },
+        { name: 'Two Chicks', category: 'Gold Sponsor', logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026749/Two_Chicks_logo_urw2fa.webp', logoPending: false },
         { name: 'Rutland Hall', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Rutland_Hall_logo_otcbbh.jpg', logoPending: false },
         { name: 'Foxhills', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/foxhills_logo_nyqvdo.png', logoPending: false },
         { name: 'Homewood', category: null, logo: 'https://res.cloudinary.com/deyxnsu01/image/upload/v1789026748/Homewood_Bath_logo_lzxdrq.webp', logoPending: false },
@@ -1473,18 +1498,27 @@ Complete the form to tell us about your donation, and our team will be in touch 
         const headlineSponsor = document.createElement('div');
         headlineSponsor.className = 'headline-sponsor';
         headlineSponsor.innerHTML = `
-            <p class="headline-sponsor__eyebrow">Headline sponsor</p>
-            <div class="headline-sponsor__logo-wrap">
-                <img src="https://res.cloudinary.com/deyxnsu01/image/upload/v1789378787/greenlogo_primary_chqny0.png" alt="MKF Capital logo" class="headline-sponsor__logo">
+            <div class="headline-sponsor__items">
+                <div class="headline-sponsor__item">
+                    <div class="headline-sponsor__logo-wrap">
+                        <img src="https://res.cloudinary.com/deyxnsu01/image/upload/v1789378787/greenlogo_primary_chqny0.png" alt="MKF Capital logo" class="headline-sponsor__logo">
+                    </div>
+                    <p class="headline-sponsor__name">Headline Sponsor</p>
+                </div>
+                <div class="headline-sponsor__item">
+                    <div class="headline-sponsor__logo-wrap">
+                        <img src="https://res.cloudinary.com/deyxnsu01/image/upload/v1789026749/Two_Chicks_logo_urw2fa.webp" alt="Two Chicks logo" class="headline-sponsor__logo">
+                    </div>
+                    <p class="headline-sponsor__name">Gold Sponsor</p>
+                </div>
             </div>
-            <p class="headline-sponsor__name">MKF Capital</p>
         `;
         container.appendChild(headlineSponsor);
 
         const groups = sponsorCategories
             .map(category => ({
                 category,
-                sponsors: sponsorData.filter(sponsor => sponsor.category === category)
+                sponsors: sponsorData.filter(sponsor => sponsor.category === category && sponsor.name !== 'Two Chicks')
             }))
             .filter(group => group.sponsors.length > 0);
 
